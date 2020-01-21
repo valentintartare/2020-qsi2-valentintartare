@@ -165,7 +165,7 @@ open Lib.Elf;
 
 let {describe} = extendDescribe(QCheckRely.Matchers.matchers);
 
-/* Porperties Based Tests */
+/* Properties Based Tests */
 describe("Elf Invariance", ({test}) => {
   test("Elf value should always be positive", ({expect})
     => {
