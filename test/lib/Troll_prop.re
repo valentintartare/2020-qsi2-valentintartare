@@ -109,10 +109,10 @@ describe("Troll Injection", ({test}) => {
         troll_two_elves_arbitrary,
         ((troll, elf1, elf2)) => {
           let initialTrollkilledTheFirstElf = i_got_one(elf1, troll);
-          let initialTrollKilledTheSecondElf = i_got_one(elf2, initialTrollkilledTheFirstElf);
-          scoring(initialTrollkilledTheFirstElf) < scoring(initialTrollKilledTheSecondElf);
+          let initialTrollKilledTheSecondElf = i_got_one(elf2, troll);
+          Lib.Elf.value(elf1) == Lib.Elf.value(elf2) ? scoring(initialTrollkilledTheFirstElf) == scoring(initialTrollKilledTheSecondElf) : scoring(initialTrollkilledTheFirstElf) != scoring(initialTrollKilledTheSecondElf);
         }
       ) |> expect.ext.qCheckTest;
       ();
-  })
+  })  
 });
